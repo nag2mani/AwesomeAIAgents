@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold text-gray-800 text-center mb-4">Generate a Blog from YouTube</h1>
+        <form method="POST" class="space-y-4">
+            <div>
+                <label for="topic" class="block text-gray-700 font-medium">Enter a topic:</label>
+                <input type="text" id="topic" name="topic" required 
+                    class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">Generate Blog</button>
+        </form>
+        {% if error %}
+            <p class="text-red-500 text-sm mt-3">{{ error }}</p>
+        {% endif %}
+        {% if blog_content %}
+            <div class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <h2 class="text-xl font-semibold text-gray-800">Blog on "{{ topic }}"</h2>
+                <p class="text-gray-700 mt-2">{{ blog_content }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
