@@ -1,4 +1,7 @@
-import os
+"""
+Credit: Krish Naik Youtube Video
+"""
+
 from dotenv import load_dotenv
 from tasks import research_task, write_task
 from agents import blog_researcher, blog_writer
